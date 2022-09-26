@@ -21,12 +21,6 @@ function renderEstado() {
     document.getElementById("tableroPreguntasSeleccionadas").innerHTML = htmlStr;
 }
 
-let dades = [];
-
-function init(){
- 
-}
-
 function cambiarUsuario(){
     localStorage.removeItem("usuario","");
     document.getElementById("benvinguda").style.display = "none";
@@ -74,7 +68,6 @@ function renderPreguntas(numP){
 
 function jugar(){
     //aquesta funcio haura de resetejar les preguntes quan torni a clicar
-    
     //crear una data del username que li poso al input text i guardo a LOCAL STORAGE
     if(localStorage.getItem("usuario") == "" || localStorage.getItem("usuario") == null){
         localStorage.setItem("usuario", document.getElementById("usuario").value);
@@ -90,7 +83,6 @@ function jugar(){
         .then((data) =>{
             console.log(data)
             datos = data;
-            
             renderPreguntas(n_preguntas);
         });
     

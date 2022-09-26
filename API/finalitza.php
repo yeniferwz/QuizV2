@@ -5,8 +5,10 @@
     $info_quiz = file_get_contents("Quizz.json");
     $quiz = json_decode($info_quiz);
     $estado = json_decode($_POST["dades"]);
-    $num_total=$estado->num_respuesta;
-    $num_correctes=0;
+
+    //estado es l'objecte tuPartida del fitxer funcionesJuego.js
+    $num_total = $estado -> num_respuesta;
+    $num_correctes = 0;
     
     for($i=0;$i< $estado->num_respuesta ;$i++){
         if($estado->v_respuestas[$i] == $arr_correctIndex[$i]){$num_correctes++;}

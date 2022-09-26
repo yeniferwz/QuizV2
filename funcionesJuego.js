@@ -33,7 +33,7 @@ function enviarResultados(){
     let formData = new FormData();
     formData.append('dades', JSON.stringify(tuPartida));
   
-    fetch("http://localhost/QuizV2-1/API/finalitza.php",{
+    fetch("http://localhost/YWZ/QuizV2-1/API/finalitza.php",{
         body:formData,
         method:"post"
     })
@@ -78,7 +78,7 @@ function jugar(){
     let n_preguntas  = parseInt(document.getElementById("preguntes").value);
     //console.log(n_preguntas);
 
-    fetch("http://localhost/QuizV2-1/API/getPreguntes.php?n=" + n_preguntas,{ method: 'POST',})
+    fetch("http://localhost/YWZ/QuizV2-1/API/getPreguntes.php?n=" + n_preguntas)
         .then((response) => response.json())
         .then((data) =>{
             console.log(data)
